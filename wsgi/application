@@ -2,18 +2,18 @@
 import os
 import sys
 
-sys.path.insert(0, os.path.dirname(__file__) or '.')
+#sys.path.insert(0, os.path.dirname(__file__) or '.')
+#PY_DIR = os.path.join(os.environ['OPENSHIFT_HOMEDIR'], "python")
+#virtenv = PY_DIR + '/virtenv/'
+#PY_CACHE = os.path.join(virtenv,
+#                        'lib',
+#                        os.environ['OPENSHIFT_PYTHON_VERSION'],
+#                        'site-packages')
+#os.environ['PYTHON_EGG_CACHE'] = os.path.join(PY_CACHE)
+#virtualenv = os.path.join(virtenv, 'bin/activate_this.py')
 
-PY_DIR = os.path.join(os.environ['OPENSHIFT_HOMEDIR'], "python")
-
-virtenv = PY_DIR + '/virtenv/'
-
-PY_CACHE = os.path.join(virtenv,
-                        'lib',
-                        os.environ['OPENSHIFT_PYTHON_VERSION'],
-                        'site-packages')
-
-os.environ['PYTHON_EGG_CACHE'] = os.path.join(PY_CACHE)
+virtenv = os.environ['APPDIR'] + '/virtenv/'
+os.environ['PYTHON_EGG_CACHE'] = os.path.join(virtenv, 'lib/python2.7/site-packages')
 virtualenv = os.path.join(virtenv, 'bin/activate_this.py')
 
 try:
@@ -23,5 +23,6 @@ except IOError:
 
 #from myflaskapp import app as application
 
-from run import app as application
+#from run import app as application
+from app import app as application
 
