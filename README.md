@@ -1,45 +1,37 @@
-Flask on OpenShift
+Welcome for Family Budget
 ==================
 
-This git repository helps you get up and running quickly w/ a Flask installation
-on OpenShift.
+This is the code for a website, which will help you manage your finances.  
 
 
-Running on OpenShift
+Info
 ----------------------------
 
-Create an account at https://www.openshift.com
-
-### Via Openshift web console
-
-[![Launch on OpenShift](http://launch-shifter.rhcloud.com/launch/light/Click to install.svg)](https://openshift.redhat.com/app/console/application_type/custom?&cartridges[]=python-2.6&initial_git_url=https://github.com/openshift/flask-example.git&name=flask)
-
-### Via rhc & git
-
-Create a python application
-
-    rhc app create flask python-2.6
-
-Add this upstream flask repo
-
-    cd flask
-    git remote add upstream -m master https://github.com/openshift/flask-example.git
-    git pull -s recursive -X theirs upstream master
-    
-Then push the repo upstream
-
-    git push
-
-That's it, you can now checkout your application at:
-
-    http://flask-$yournamespace.rhcloud.com
+Currently the alfa version (FBA) is deployed to the RedShift server of QMUL.  
+Here is the URL of the website: [http://fba-dev.apps.devcloud.eecs.qmul.ac.uk](http://fba-dev.apps.devcloud.eecs.qmul.ac.uk)  
+This website is also used as a course project for the Cloud Computing module at Queen Mary University of London.  
+It demonstrates how a PaaS like RedShift can be easily used as a platform for the creation of websites with various functionalities.  
 
 ------------------------------
 
-To get more log messages in your OpenShift logs please add the following line to your code
 
-    app.config['PROPAGATE_EXCEPTIONS'] = True
+Functionalities
+----------------------------
 
-To read more about logging in Flask please see this email
+- Nice visuals: Materialize http://materializecss.com/
+- Use of external API
+- RESTfull service - API calls
+- DB storage
 
-http://librelist.com/browser//flask/2012/1/27/catching-exceptions-from-flask/
+------------------------------
+
+
+Technical details
+----------------------------
+
+- Core technology: Flask with Python 2.7 (RedShift template)
+- Max Memory: 1GB
+- Num. of CPUs: 1 core
+
+------------------------------
+
