@@ -1,8 +1,5 @@
-from flask_wtf import Form
+from flask_wtf import FlaskForm
 from wtforms import TextField, validators
 
-class MessageForm(Form):
-   message = TextField(u'What is on your mind?', [validators.optional(), validators.length(max=200)])
-
-
-
+class MessageForm(FlaskForm):
+	message = TextField(u'What is on your mind?', [validators.optional(), validators.length(max=200)])
