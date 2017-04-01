@@ -3,16 +3,17 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-  <title>QMUL ECS781P - 2017</title>
+  <title>Family Budget</title>
 
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="/static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="/static/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
-<body>
-  <nav class="light-blue lighten-1" role="navigation">
-    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Logo</a>
+<body class="lime lighten-4">
+
+  <nav class="green darken-1" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">FB</a>
       <ul class="right hide-on-med-and-down">
         <li><a href="#">Navbar Link</a></li>
       </ul>
@@ -26,7 +27,7 @@
   <div class="section no-pad-bot" id="index-banner">
     <div class="container">
       <br><br>
-      <h1 class="header center orange-text">{% block title %}{% endblock %}</h1>
+      <h1 class="header center green-text text-darken-4">{% block title %}{% endblock %}</h1>
       <div class="row center">
           {% block content %}{% endblock %}
       </div>
@@ -43,32 +44,35 @@
     </div>
   </div>
 
-  <footer class="page-footer orange">
+  <footer class="page-footer brown darken-1">
     <div class="container">
       <div class="row">
         <div class="col l6 s12">
           <h5 class="white-text">About us</h5>
-          <p class="grey-text text-lighten-4">We are a startup.</p>
+          <p class="blue-text text-lighten-4">
+          Team of one Data Scientist. Exploring new technologies and designing comfortable solutions.
+          Currently taking the amazing module of Cloud Computing at QMUL.
+          </p>
 
 
         </div>
         <div class="col l3 s12">
           <h5 class="white-text">Visit</h5>
           <ul>
-            <li><a class="white-text" href="#!">Our homepage</a></li>
+            <li><a class="blue-text text-lighten-3" href="http://iviglious.blogspot.co.uk/">Our homepage</a></li>
           </ul>
         </div>
         <div class="col l3 s12">
           <h5 class="white-text">Contact</h5>
           <ul>
-            <li><a class="white-text" href="mailto:youremail@qmul.ac.uk">youremail@qmul.ac.uk</a></li>
+            <li><a class="blue-text text-lighten-4" href="mailto:i.s.shalev@se16.qmul.ac.uk">i.s.shalev@se16.qmul.ac.uk</a></li>
           </ul>
         </div>
       </div>
     </div>
     <div class="footer-copyright">
       <div class="container">
-      Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+      © Iviglious, 2017 - Made by <a class="blue-text text-lighten-3" href="http://materializecss.com">Materialize</a>
       </div>
     </div>
   </footer>
