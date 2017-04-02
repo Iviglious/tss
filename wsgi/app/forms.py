@@ -1,7 +1,7 @@
 """ Module for defining the forms used in the app """
 
 from flask_wtf import FlaskForm
-from wtforms import TextField, validators
+from wtforms import TextField, DateField, validators
 
 class MessageForm(FlaskForm):
     """ Form Class for the emotion API """
@@ -15,8 +15,8 @@ class ExpenseForm(FlaskForm):
 
     user_name = TextField(u'User name'
                           , [validators.optional(), validators.length(max=20)])
-    expense_date = TextField(u'Expense date'
-                             , [validators.optional(), validators.length(max=20)])
+    expense_date = DateField(u'Expense date'
+                             , format='%Y-%m-%d')
     expense_amount = TextField(u'Expense amount'
                                , [validators.optional(), validators.length(max=20)])
     expense_description = TextField(u'Expense description'

@@ -1,18 +1,12 @@
 """ Module for demostrating DB operations """
 
-import os
 import datetime
-from flask_pymongo import PyMongo
 from flask import jsonify
-from bson.json_util import dumps
+#from bson.json_util import dumps
 
 from app import C_APP
+from app.DB import MG_DB
 
-
-C_APP.config['MONGO_DBNAME'] = os.environ['OPENSHIFT_APP_NAME']
-C_APP.config['MONGO_URI'] = os.environ['OPENSHIFT_MONGODB_DB_URL']
-
-MG_DB = PyMongo(C_APP)
 
 @C_APP.route('/demo_db')
 def demo_db():

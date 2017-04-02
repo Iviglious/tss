@@ -67,19 +67,23 @@ def generate_sample_bar_tab(msg):
 def generate_bar_tab(msg, arr):
     """ Generate a graph of bars with tabs from array of data"""
 
-    d_date = [d["date"] for d in arr if d["user_name"] == "ivo"]
-    d_amount = [d["amount"] for d in arr if d["user_name"] == "ivo"]
-    fig1 = figure(width=300, height=200)
-    fig1.vbar(x=d_date, width=0.5, bottom=0, top=d_amount, color="green")
-    tab1 = Panel(child=fig1, title="ivo")
+    # get all users (distinct)
+    usr_set = set()
+    if arr:
+        for exp in arr:
+            usr_set.add(exp['user_name'])
 
-    d_date = [d["date"] for d in arr if d["user_name"] == "aline"]
-    d_amount = [d["amount"] for d in arr if d["user_name"] == "aline"]
-    fig2 = figure(width=300, height=200)
-    fig2.vbar(x=d_date, width=0.5, bottom=0, top=d_amount, color="blue")
-    tab2 = Panel(child=fig2, title="aline")
+    tab_list = list()
+    # loop thru each user (create a tab per user)
+    if arr:
+        for usr in usr_set:
+            d_date = [d["date"] for d in arr if d["user_name"] == usr]
+            d_amount = [d["amount"] for d in arr if d["user_name"] == usr]
+            fig = figure(width=300, height=200)
+            fig.vbar(x=d_date, width=0.5, bottom=0, top=d_amount, color="green")
+            tab_list.append(Panel(child=fig, title=usr))
 
-    tabs = Tabs(tabs=[tab1, tab2])
+    tabs = Tabs(tabs=tab_list)
 
     js_resources = INLINE.render_js()
     css_resources = INLINE.render_css()
