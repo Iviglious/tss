@@ -25,7 +25,7 @@ def db_add():
 
     sample_expense = {
         'user_name':'ivo'
-        , 'expense_date': datetime.datetime.now
+        , 'expense_date': datetime.datetime.now()
         , 'expense_amount': 13.95
         , 'expense_description': 'Sample expense as a start.'
     } # sample value
