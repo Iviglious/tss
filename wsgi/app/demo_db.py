@@ -4,6 +4,7 @@ import os
 import datetime
 from flask_pymongo import PyMongo
 from flask import jsonify
+from bson.json_util import dumps
 
 from app import C_APP
 
@@ -41,4 +42,5 @@ def db_add():
 def show_all_expenses():
     """ Function to list all the expenses """
 
-    return jsonify({'expenses': MG_DB.db.expenses.find()})
+    #return jsonify({'expenses': MG_DB.db.expenses.find()})
+    return dumps(MG_DB.db.expenses.find())
