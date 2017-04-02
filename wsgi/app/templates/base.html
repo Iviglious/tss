@@ -3,6 +3,8 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <link rel="shortcut icon" href="{{ url_for('static', filename = 'img/FB_logo.ico') }}">
+  <link rel="icon" type="image/gif" href="{{ url_for('static', filename = 'img/FB_logo.gif') }}">
   <title>Family Budget</title>
 
   <!-- CSS  -->
@@ -13,17 +15,24 @@
 <body class="lime lighten-4">
 
   <nav class="green darken-1" role="navigation">
-    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">FB</a>
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="/index" class="brand-logo valign-wrapper">
+        <img class="valign hoverable" src="{{ url_for('static', filename = 'img/FB_logo.gif') }}" height=40px />
+      </a>
+
       <ul class="right hide-on-med-and-down">
-        <li><a href="#">Navbar Link</a></li>
+        <li><a href="/register">Register</a></li>
+        <li><a href="/login">Login</a></li>
       </ul>
 
       <ul id="nav-mobile" class="side-nav">
-        <li><a href="#">Navbar Link</a></li>
+        <li><a href="/register">Register</a></li>
+        <li><a href="/login">Login</a></li>
       </ul>
       <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>
   </nav>
+
   <div class="section no-pad-bot" id="index-banner">
     <div class="container">
       <br><br>
@@ -49,7 +58,7 @@
       <div class="row">
         <div class="col l6 s12">
           <h5 class="white-text">About us</h5>
-          <p class="blue-text text-lighten-4">
+          <p class="green-text text-lighten-4">
           Team of one Data Scientist. Exploring new technologies and designing comfortable solutions.
           Currently taking the amazing module of Cloud Computing at QMUL.
           </p>
@@ -59,20 +68,20 @@
         <div class="col l3 s12">
           <h5 class="white-text">Visit</h5>
           <ul>
-            <li><a class="blue-text text-lighten-3" href="http://iviglious.blogspot.co.uk/">Our homepage</a></li>
+            <li><a class="green-text text-lighten-4" href="http://iviglious.blogspot.co.uk/">Our homepage</a></li>
           </ul>
         </div>
         <div class="col l3 s12">
           <h5 class="white-text">Contact</h5>
           <ul>
-            <li><a class="blue-text text-lighten-4" href="mailto:i.s.shalev@se16.qmul.ac.uk">i.s.shalev@se16.qmul.ac.uk</a></li>
+            <li><a class="green-text text-lighten-4" href="mailto:i.s.shalev@se16.qmul.ac.uk">i.s.shalev@se16.qmul.ac.uk</a></li>
           </ul>
         </div>
       </div>
     </div>
     <div class="footer-copyright">
       <div class="container">
-      © Iviglious, 2017 - Made by <a class="blue-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+      © Iviglious, 2017 - Made by <a class="green-text text-lighten-4" href="http://materializecss.com">Materialize</a>
       </div>
     </div>
   </footer>

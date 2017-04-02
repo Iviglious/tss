@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %} Expenses {% endblock %}
+
+{% block content %}
+
+{% if message %}
+	<div id="EMHideMe">{{ message }}</div><br>
+{% endif %}
+
+This is a diagram of your expenses for the past 2 months.<br>
+User name | Expense date | Expense amount<br>
+{% for e in expenses %}
+    {{ e.user_name }} {{ e.date }} {{ e.amount }}<br>
+{% endfor %}
+
+Below you can enter one new expense and insert it.<br>
+
+<form action="" method="POST">
+ 	{{ form.csrf_token }}
+ 	<table class="expenses">
+ 		<tr><td>{{ form.user_name.label }}</td><td>{{ form.user_name(size=20) }}</td></tr>
+ 		<tr><td>{{ form.expense_date.label }}</td><td>{{ form.expense_date(size=20) }}</td></tr>
+ 		<tr><td>{{ form.expense_amount.label }}</td><td>{{ form.expense_amount(size=20) }}</td></tr>
+ 		<tr><td>{{ form.expense_description.label }}</td><td>{{ form.expense_description(size=20) }}</td></tr>
+ 	</table>
+	<input type=submit value="Add expense">
+</form>
+
+{% endblock %}
