@@ -69,13 +69,13 @@ def generate_bar_tab(msg, arr):
 
     d_date = [d["date"] for d in arr if d["user_name"] == "ivo"]
     d_amount = [d["amount"] for d in arr if d["user_name"] == "ivo"]
-    fig1 = figure(width=600, height=400)
+    fig1 = figure(width=300, height=200)
     fig1.vbar(x=d_date, width=0.5, bottom=0, top=d_amount, color="green")
     tab1 = Panel(child=fig1, title="ivo")
 
     d_date = [d["date"] for d in arr if d["user_name"] == "aline"]
     d_amount = [d["amount"] for d in arr if d["user_name"] == "aline"]
-    fig2 = figure(width=600, height=400)
+    fig2 = figure(width=300, height=200)
     fig2.vbar(x=d_date, width=0.5, bottom=0, top=d_amount, color="blue")
     tab2 = Panel(child=fig2, title="aline")
 
