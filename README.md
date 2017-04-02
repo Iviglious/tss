@@ -32,6 +32,7 @@ Technical details
 - Core technology: Flask with Python 2.7 (RedShift template)
 - Max Memory: 1GB
 - Num. of CPUs: 1 core
+- GitHub code: https://github.com/Iviglious/fba
 
 ------------------------------
 

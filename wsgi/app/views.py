@@ -1,16 +1,23 @@
-from app import app
-from flask import render_template, request, jsonify
-import unirest
-from forms import MessageForm, ExpenseForm
+""" Module for handling the main route directives """
+
+from flask import render_template
+#import unirest
+
+#from forms import MessageForm, ExpenseForm
+from app import C_APP
 
 
-@app.route('/')
-@app.route('/index/')
+@C_APP.route('/')
+@C_APP.route('/index/')
 def index():
-	return render_template("index.html")
+    """Routing function for index"""
+
+    return render_template("index.html")
 
 
-@app.route('/register/')
-@app.route('/login/')
+@C_APP.route('/register/')
+@C_APP.route('/login/')
 def todo():
-	return render_template("todo.html")
+    """ Routing function for TODO """
+
+    return render_template("todo.html")

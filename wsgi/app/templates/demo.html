@@ -1,6 +1,18 @@
 {% extends "base.html" %}
 
+{% block head %}
+
+    {{ js_resources|indent(4)|safe }}
+
+    {{ css_resources|indent(4)|safe }}
+
+    {{ plot_script|indent(4)|safe }}
+
+{% endblock %}
+
+
 {% block title %} Expenses {% endblock %}
+
 
 {% block content %}
 
@@ -8,11 +20,15 @@
 	<div id="EMHideMe">{{ message }}</div><br>
 {% endif %}
 
-This is a diagram of your expenses for the past 2 months.<br>
+This is a diagram of your expenses for the past 2 months:<br>
+<div class="center">{{ plot_div|indent(4)|safe }}</div>
+
+<!--
 User name | Expense date | Expense amount<br>
 {% for e in expenses %}
     {{ e.user_name }} {{ e.date }} {{ e.amount }}<br>
 {% endfor %}
+-->
 
 Below you can enter one new expense and insert it.<br>
 

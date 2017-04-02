@@ -1,9 +1,8 @@
+""" Module for initialization of the app """
+
 from flask import Flask
 
-app = Flask(__name__)
+C_APP = Flask(__name__)
+C_APP.secret_key = 'Iviglious is awesome!'
 
-app.secret_key = 'ZoltaR2'
-
-from app import views
-from app import demo
-from app import apis
+from app import views, demo, apis

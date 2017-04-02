@@ -1,8 +1,11 @@
-from app import app
+""" Module for executing the local server """
+
 from werkzeug.contrib.fixers import ProxyFix
 
-app.wsgi_app = ProxyFix(app.wsgi_app)
+from app import C_APP
+
+C_APP.wsgi_app = ProxyFix(C_APP.wsgi_app)
 
 if __name__ == "__main__":
-	app.run(debug = True)
+    C_APP.run(debug=True)
 
