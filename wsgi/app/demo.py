@@ -9,10 +9,10 @@ from app import C_APP, DB, BoK
 def demo():
     """ Routing function for demo (GET) """
 	# read from db to get all expenses and visualise them
-	#all_expenses = DB.get_all_expenses()
+    all_expenses = DB.get_all_expenses()
 
 	#html = render_template("demo.html", form=ExpenseForm(), expenses=all_expenses, message=None)
-    return BoK.generate_sample_graph(None)
+    return BoK.generate_bar_tab(None, all_expenses)
 
 @C_APP.route('/demo/', methods=['POST'])
 def demo_post():
@@ -28,8 +28,8 @@ def demo_post():
         msg = DB.add_expense(user_name, expense_date, expense_amount, expense_description)
 
 	# read from db to get all expenses and visualise them
-	#all_expenses = DB.get_all_expenses()
+    all_expenses = DB.get_all_expenses()
 
 	#html = render_template("demo.html", form=ExpenseForm(), expenses=all_expenses, message=msg)
 	#return html
-    return BoK.generate_sample_graph(msg)
+    return BoK.generate_bar_tab(msg, all_expenses)
