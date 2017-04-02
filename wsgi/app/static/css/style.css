@@ -1,31 +1,32 @@
-
-table.expenses
-{
-	color: Blue;
-}
+/* Main style sheet */
 
 #EMHideMe {
-    -moz-animation: cssAnimation 0s ease-in 5s forwards;
+    -moz-animation: fadeinout 5s ease-out forwards;
     /* Firefox */
-    -webkit-animation: cssAnimation 0s ease-in 5s forwards;
+    -webkit-animation: fadeinout 5s ease-out forwards;
     /* Safari and Chrome */
-    -o-animation: cssAnimation 0s ease-in 5s forwards;
+    -o-animation: fadeinout 5s ease-out forwards;
     /* Opera */
-    animation: cssAnimation 0s ease-in 5s forwards;
+    animation: fadeinout 5s ease-out forwards;
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
+    
+    position:absolute;
+    top:15%;
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto; 
+    width: 300px; /* Need a specific value to work */
 }
-@keyframes cssAnimation {
-    to {
-        width:0;
-        height:0;
-        overflow:hidden;
-    }
+
+@-webkit-keyframes fadeinout {
+  0%,100% { opacity: 0; }
+  50% { opacity: 1; }
 }
-@-webkit-keyframes cssAnimation {
-    to {
-        width:0;
-        height:0;
-        visibility:hidden;
-    }
+
+@keyframes fadeinout {
+  0%,100% { opacity: 0; }
+  50% { opacity: 1; }
 }
+

@@ -16,15 +16,35 @@ User name | Expense date | Expense amount<br>
 
 Below you can enter one new expense and insert it.<br>
 
-<form action="" method="POST">
+<br>
+Add a new expense:
+<form action="" method="POST" class="col s12">
  	{{ form.csrf_token }}
- 	<table class="expenses">
- 		<tr><td>{{ form.user_name.label }}</td><td>{{ form.user_name(size=20) }}</td></tr>
- 		<tr><td>{{ form.expense_date.label }}</td><td>{{ form.expense_date(size=20) }}</td></tr>
- 		<tr><td>{{ form.expense_amount.label }}</td><td>{{ form.expense_amount(size=20) }}</td></tr>
- 		<tr><td>{{ form.expense_description.label }}</td><td>{{ form.expense_description(size=20) }}</td></tr>
- 	</table>
-	<input type=submit value="Add expense">
+	<div class="row">
+        <div class="input-field col s4 push-s4">
+          {{ form.user_name }}
+          {{ form.user_name.label(class_="green-text text-darken-1") }}
+        </div>
+	</div>
+	<div class="row">
+		<div class="input-field col s4 push-s4">
+          {{ form.expense_date }}
+          {{ form.expense_date.label(class_="green-text text-darken-1") }}
+        </div>
+	</div>
+	<div class="row">
+		<div class="input-field col s4 push-s4">
+          {{ form.expense_amount }}
+          {{ form.expense_amount.label(class_="green-text text-darken-1") }}
+        </div>
+	</div>
+	<div class="row">
+		<div class="input-field col s8 push-s2">
+          {{ form.expense_description }}
+          {{ form.expense_description.label(class_="green-text text-darken-1") }}
+        </div>
+	</div>
+	<input class="btn" type=submit value="Add expense">
 </form>
 
 {% endblock %}
