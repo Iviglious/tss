@@ -52,7 +52,7 @@ def show_all_expenses():
         html_str += "<tr>"
         html_str += "<td>{}</td>".format(exp['user_name'])
         html_str += "<td>{:%Y-%m-%d %H:%M}</td>".format(exp['expense_date'])
-        html_str += "<td>{:.2f}</td>".format(exp['expense_amount'])
+        html_str += "<td>{}</td>".format(exp['expense_amount'])
         html_str += "<td>{}</td>".format(exp['expense_description'])
         html_str += "</tr>"
     html_str += "</table>"
