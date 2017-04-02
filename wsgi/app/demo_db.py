@@ -25,10 +25,10 @@ def db_add():
     """ Function to add rows """
 
     sample_expense = {
-        'user_name':'ivo'
-        , 'expense_date': datetime.datetime.now()
-        , 'expense_amount': 4.36
-        , 'expense_description': 'This is really working!'
+        'user_name': u'ivo'
+        , 'expense_date': datetime.datetime.utcnow() # utc time
+        , 'expense_amount': 1.63
+        , 'expense_description': u'And now another expense!'
     } # sample value
 
     curr_col = MG_DB.db.expenses # it acctually designs a collection called expenses
@@ -57,8 +57,8 @@ def show_all_expenses():
     for exp in MG_DB.db.expenses.find():
         html_str += "<tr>"
         html_str += "<td>{}</td>".format(exp['user_name'])
-        html_str += "<td>{}</td>".format(exp['expense_date']['$date'])
-        html_str += "<td>{}</td>".format(exp['expense_amount'])
+        html_str += "<td>{:%Y-%m-%d %H:%M}</td>".format(exp['expense_date'])
+        html_str += "<td>{:.2f}</td>".format(exp['expense_amount'])
         html_str += "<td>{}</td>".format(exp['expense_description'])
         html_str += "</tr>"
     html_str += "</table>"
