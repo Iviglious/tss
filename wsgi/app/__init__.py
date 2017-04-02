@@ -5,4 +5,4 @@ from flask import Flask
 C_APP = Flask(__name__)
 C_APP.secret_key = 'Iviglious is awesome!'
 
-from app import views, demo, apis
+from app import views, demo, apis, demo_db

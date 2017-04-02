@@ -2,7 +2,7 @@
 
 from setuptools import setup
 
-setup(name='FBA'
+setup(name='FBB'
       , version='1.0'
       , description='OpenShift App'
       , author='Ivaylo Shalev'
@@ -14,5 +14,6 @@ setup(name='FBA'
                           , 'markdown'
                           , 'flup'
                           , 'unirest'
-                          , 'bokeh']
-)
+                          , 'bokeh'
+                          , 'Flask-PyMongo']
+     )
