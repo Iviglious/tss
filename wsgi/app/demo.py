@@ -1,7 +1,7 @@
 """ This module handles the route calls to the demo page """
 
-from flask import request
 from datetime import datetime
+from flask import request
 
 from app import C_APP, DB, BoK
 
@@ -21,7 +21,7 @@ def demo_post():
 
     user_name = request.form['user_name']
     expense_date = datetime.strptime(request.form['expense_date'], '%Y-%m-%d')
-    expense_amount = request.form['expense_amount']
+    expense_amount = float(request.form['expense_amount'])
     expense_description = request.form['expense_description']
 
     msg = None
