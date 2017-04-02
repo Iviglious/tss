@@ -21,7 +21,9 @@
 {% endif %}
 
 This is a diagram of your expenses for the past 2 months:<br>
-<div class="row center">{{ plot_div|indent(4)|safe }}</div>
+<div class="row center">
+    <div class="col s6 push-s3">{{ plot_div|indent(4)|safe }}</div>
+</div>
 
 Below you can enter one new expense and insert it.<br>
 
