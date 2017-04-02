@@ -27,8 +27,8 @@ def db_add():
     sample_expense = {
         'user_name':'ivo'
         , 'expense_date': datetime.datetime.now()
-        , 'expense_amount': 13.95
-        , 'expense_description': 'Sample expense as a start.'
+        , 'expense_amount': 4.36
+        , 'expense_description': 'This is really working!'
     } # sample value
 
     curr_col = MG_DB.db.expenses # it acctually designs a collection called expenses
@@ -42,5 +42,25 @@ def db_add():
 def show_all_expenses():
     """ Function to list all the expenses """
 
-    #return jsonify({'expenses': MG_DB.db.expenses.find()})
-    return dumps(MG_DB.db.expenses.find())
+    #all_exp = dumps(MG_DB.db.expenses.find())
+    #return all_exp # return all as json
+
+    # save as a HTML table
+    html_str = "<table>"
+    html_str += "<tr>"
+    html_str += "<th>user_name</th>"
+    html_str += "<th>expense_date</th>"
+    html_str += "<th>expense_amount</th>"
+    html_str += "<th>expense_description</th>"
+    html_str += "</tr>"
+
+    for exp in MG_DB.db.expenses.find():
+        html_str += "<tr>"
+        html_str += "<td>{}</td>".format(exp['user_name'])
+        html_str += "<td>{}</td>".format(exp['expense_date']['$date'])
+        html_str += "<td>{}</td>".format(exp['expense_amount'])
+        html_str += "<td>{}</td>".format(exp['expense_description'])
+        html_str += "</tr>"
+    html_str += "</table>"
+    return html_str
+
