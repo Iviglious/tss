@@ -2,7 +2,7 @@
 
 import datetime
 from flask import jsonify
-from bson.json_util import dumps
+#from bson.json_util import dumps
 
 from app import C_APP
 from app.DB import MG_DB
@@ -36,9 +36,9 @@ def db_add():
 def show_all_expenses():
     """ Function to list all the expenses """
 
-    all_exp = dumps(MG_DB.db.expenses.find())
-    return all_exp # return all as json
-'''
+    #all_exp = dumps(MG_DB.db.expenses.find())
+    #return all_exp # return all as json
+
     # save as a HTML table
     html_str = "<table>"
     html_str += "<tr>"
@@ -55,11 +55,11 @@ def show_all_expenses():
         html_str += "<td>{:%Y-%m-%d %H:%M} {}</td>".format(exp['expense_date'], type(exp['expense_date']))
         html_str += "<td>{} {}</td>".format(exp['expense_amount'], type(exp['expense_amount']))
         html_str += "<td>{}</td>".format(exp['expense_description'])
-        html_str += "<td>{}</td>".format(exp['id'])
+        html_str += "<td>{}</td>".format(exp['_id'])
         html_str += "</tr>"
     html_str += "</table>"
     return html_str
-'''
+
 
 @C_APP.route('/demo_db/remove/<row_id>')
 def remove_row(row_id):
