@@ -3,6 +3,7 @@
 import datetime
 from flask import jsonify
 #from bson.json_util import dumps
+from bson.objectid import ObjectId
 
 from app import C_APP
 from app.DB import MG_DB
@@ -66,6 +67,6 @@ def show_all_expenses():
 def remove_row(row_id):
     """ Function for removal of row from expenses collection """
 
-    res = MG_DB.db.expenses.delete_one({'_id': row_id})
+    res = MG_DB.db.expenses.delete_one({'_id': ObjectId(row_id)})
     return "Number of rows removed: {}<br><br>\
     View all <a href='/demo_db/expenses'>expenses</a>".format(res.deleted_count)
