@@ -54,9 +54,9 @@ def show_all_expenses():
         html_str += "<tr>"
         html_str += "<td>{}</td>".format(exp['user_name'])
         html_str += "<td>{:%Y-%m-%d %H:%M} {}</td>".format(exp['expense_date']
-                                                           , type(exp['expense_date']).replace("<type '", "").replace("'>", ""))
+                                                           , str(type(exp['expense_date'])).replace("<type '", "").replace("'>", ""))
         html_str += "<td>{} {}</td>".format(exp['expense_amount']
-                                            , type(exp['expense_amount']).replace("<type '", "").replace("'>", ""))
+                                            , str(type(exp['expense_amount'])).replace("<type '", "").replace("'>", ""))
         html_str += "<td>{}</td>".format(exp['expense_description'])
         html_str += "<td>{}</td>".format(exp['_id'])
         html_str += "</tr>"
