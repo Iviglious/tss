@@ -7,5 +7,5 @@ from app import C_APP
 C_APP.wsgi_app = ProxyFix(C_APP.wsgi_app)
 
 if __name__ == "__main__":
-    C_APP.run(debug=True)
+    C_APP.run(debug=False)
 

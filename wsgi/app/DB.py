@@ -2,6 +2,7 @@
 
 import os
 import pymongo
+from datetime import datetime
 from flask_pymongo import PyMongo
 
 from app import C_APP
@@ -26,10 +27,6 @@ def add_expense(user_name, expense_date, expense_amount, expense_description):
     else:
         return "Failed to insert the expense!"
 
-def get_all_expenses_():
-    """ Function to select all expenses from DB """
-
-    return None
 
 def get_all_expenses():
     """ Function to select all expenses from DB """
@@ -41,3 +38,14 @@ def get_all_expenses():
                         , 'amount': "{:.2f}".format(exp['expense_amount'])})
     return all_exp # save as a list of dictionaries
 
+def get_all_expenses_():
+    """ Function to select all expenses from DB """
+
+    return [
+        {'user_name':'ivo', 'date':datetime.strptime('2017-03-30', '%Y-%m-%d'), 'amount':1.34}
+        , {'user_name':'ivo', 'date':datetime.strptime('2017-03-31', '%Y-%m-%d'), 'amount':4.46}
+        , {'user_name':'ivo', 'date':datetime.strptime('2017-04-01', '%Y-%m-%d'), 'amount':6.30}
+        , {'user_name':'aline', 'date':datetime.strptime('2017-03-30', '%Y-%m-%d'), 'amount':1.64}
+        , {'user_name':'aline', 'date':datetime.strptime('2017-03-31', '%Y-%m-%d'), 'amount':3.78}
+        , {'user_name':'aline', 'date':datetime.strptime('2017-04-02', '%Y-%m-%d'), 'amount':2.20}
+    ]
