@@ -61,7 +61,7 @@ def show_all_expenses():
     return html_str
 
 
-@C_APP.route('demo_db/remove/<row_id>')
+@C_APP.route('/demo_db/remove/<row_id>')
 def remove_row(row_id):
     """ Function for removal of row from expenses collection """
 
