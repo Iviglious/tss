@@ -34,8 +34,8 @@ def get_all_expenses():
     all_exp = list()
     for exp in MG_DB.db.expenses.find().sort('expense_date', pymongo.ASCENDING):
         all_exp.append({'user_name': exp['user_name']
-                        , 'date':"{:%Y-%m-%d %H:%M}".format(exp['expense_date'])
-                        , 'amount': "{:.2f}".format(exp['expense_amount'])})
+                        , 'date':exp['expense_date']
+                        , 'amount': exp['expense_amount']})
     return all_exp # save as a list of dictionaries
 
 def get_all_expenses_():
