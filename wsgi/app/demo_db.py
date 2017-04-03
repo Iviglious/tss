@@ -52,7 +52,8 @@ def show_all_expenses():
     for exp in MG_DB.db.expenses.find():
         html_str += "<tr>"
         html_str += "<td>{}</td>".format(exp['user_name'])
-        html_str += "<td>{:%Y-%m-%d %H:%M} {}</td>".format(exp['expense_date'], type(exp['expense_date']))
+        html_str += "<td>{:%Y-%m-%d %H:%M} {}</td>".format(exp['expense_date']
+                                                           , type(exp['expense_date']))
         html_str += "<td>{} {}</td>".format(exp['expense_amount'], type(exp['expense_amount']))
         html_str += "<td>{}</td>".format(exp['expense_description'])
         html_str += "<td>{}</td>".format(exp['_id'])
@@ -65,6 +66,6 @@ def show_all_expenses():
 def remove_row(row_id):
     """ Function for removal of row from expenses collection """
 
-    res = MG_DB.db.expenses.delete_one(row_id)
+    res = MG_DB.db.expenses.delete_one({'_id': row_id})
     return "Number of rows removed: {}<br><br>\
     View all <a href='/demo_db/expenses'>expenses</a>".format(res.deleted_count)
