@@ -1,5 +1,6 @@
 """ Module for handling the routes directed for APIs"""
 
+import os
 from flask import render_template, request, jsonify
 import unirest
 
@@ -28,9 +29,9 @@ def emotion_post():
     """ Handles the emotion (POST) """
 
     msg = request.form['message']
-    response = unirest.post("https://community-sentiment.p.mashape.com/text/",
+    response = unirest.post(os.environ['APP_A_URL'],
                             headers={
-                                "X-Mashape-Key":"6VWQcE5umumsh9oLsHfFlOseFGbDp1caaUKjsnj6PJRqxZKslv"
+                                "X-Mashape-Key":os.environ['APP_A_KEY']
                                                 , "Content-Type":"application/x-www-form-urlencoded"
                                                                  , "Accept":"application/json"
                             },
