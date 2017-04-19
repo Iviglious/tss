@@ -80,7 +80,7 @@ def generate_bar_tab(msg, arr):
             d_date = [d["date"] for d in arr if d["user_name"] == usr]
             d_amount = [d["amount"] for d in arr if d["user_name"] == usr]
             fig = figure(width=300, height=200, x_axis_type="datetime")
-            fig.vbar(x=d_date, width=1, bottom=0, top=d_amount, color="blue", line_width=2)
+            fig.vbar(x=d_date, width=1, bottom=0, top=d_amount, color="blue", line_width=5)
             tab_list.append(Panel(child=fig, title=usr))
 
     tabs = Tabs(tabs=tab_list)
