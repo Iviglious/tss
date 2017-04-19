@@ -71,3 +71,11 @@ def remove_row(row_id):
     res = MG_DB.db.expenses.delete_one({'_id': ObjectId(row_id)})
     return "Number of rows removed: {}<br><br>\
     View all <a href='/demo_db/expenses'>expenses</a>".format(res.deleted_count)
+
+@C_APP.route('/demo_db/remove_all')
+def remove_all():
+    """ Function for removal of all rows from expenses collection """
+
+    res = MG_DB.db.expenses.deleteMany({})
+    return "Number of rows removed: {}<br><br>\
+    View all <a href='/demo_db/expenses'>expenses</a>".format(res.deleted_count)
