@@ -19,9 +19,8 @@ def get_expenses():
     #    , {'id':2, 'type':'Other', 'amount':5.10}
     #]
 
-    #expenses_arr = MG_DB.db.expenses.find()
-    #return jsonify({'expenses':expenses_arr})
-    return jsonify({'expenses':MG_DB.db.get_all_expenses()})
+    expenses_arr = MG_DB.db.expenses.find().sort('expense_date', pymongo.ASCENDING)
+    return jsonify({'expenses':expenses_arr})
 
     # Show all expenses as json
     #return dumps(MG_DB.db.expenses.find())
