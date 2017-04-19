@@ -1,8 +1,8 @@
 """ Module for handling the routes directed for APIs"""
 
 import os
-from flask import render_template, request, jsonify
-#from bson.json_util import dumps
+from flask import render_template, request#, jsonify
+from bson.json_util import dumps
 import unirest
 
 from app.forms import MessageForm
@@ -19,11 +19,11 @@ def get_expenses():
     #    , {'id':2, 'type':'Other', 'amount':5.10}
     #]
 
-    expenses_arr = MG_DB.db.expenses.find().sort('expense_date', pymongo.ASCENDING)
-    return jsonify({'expenses':expenses_arr})
+    #expenses_arr = MG_DB.db.expenses.find().sort('expense_date', pymongo.ASCENDING)
+    #return jsonify({'expenses':expenses_arr})
 
     # Show all expenses as json
-    #return dumps(MG_DB.db.expenses.find())
+    return dumps(MG_DB.db.expenses.find())
 
 
 @C_APP.route('/emotion/')
