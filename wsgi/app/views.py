@@ -14,10 +14,3 @@ def index():
 
     return render_template("index.html")
 
-
-@C_APP.route('/register/')
-@C_APP.route('/login/')
-def todo():
-    """ Routing function for TODO """
-
-    return render_template("todo.html")

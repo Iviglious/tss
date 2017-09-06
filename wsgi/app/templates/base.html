@@ -3,9 +3,9 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-  <link rel="shortcut icon" href="{{ url_for('static', filename = 'img/FB_logo.ico') }}">
-  <link rel="icon" type="image/gif" href="{{ url_for('static', filename = 'img/FB_logo.gif') }}">
-  <title>Family Budget</title>
+  <link rel="shortcut icon" href="{{ url_for('static', filename = 'img/SophieLogoSmall.jpg') }}">
+  <link rel="icon" type="image/gif" href="{{ url_for('static', filename = 'img/SophieLogoSmall.jpg') }}">
+  <title>Donate - Medicine for Sophie's SMA</title>
 
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -19,29 +19,25 @@
   <nav class="green darken-1" role="navigation">
     <div class="nav-wrapper container">
       <a id="logo-container" href="/index" class="brand-logo valign-wrapper">
-        <img class="valign hoverable" src="{{ url_for('static', filename = 'img/FB_logo.gif') }}" height=40px />
+        <img class="valign hoverable" src="{{ url_for('static', filename = 'img/SophieLogoSmall.jpg') }}" height=40px />
       </a>
 
       <ul class="right hide-on-med-and-down">
-        <li><a href="/emotion">Emotions</a></li>
-        <li><a href="/api/1.0/expenses">API</a></li>
-        <li><a href="/register">Register</a></li>
-        <li><a href="/login">Login</a></li>
+        <li><a href="iviglious.blogspot.com">News</a></li>
       </ul>
 
       <ul id="nav-mobile" class="side-nav">
-        <li><a href="/emotion">Emotions</a></li>
-        <li><a href="/api/1.0/expenses">API</a></li>
-        <li><a href="/register">Register</a></li>
-        <li><a href="/login">Login</a></li>
+        <li><a href="iviglious.blogspot.com">News</a></li>
       </ul>
-      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+      <a href="#" data-activates="nav-mobile" class="button-collapse">
+        <i class="material-icons">menu</i>
+      </a>
     </div>
   </nav>
 
-  <div class="section no-pad-bot" id="index-banner">
+  <div class="section no-pad-bot bkg-pic-a" id="index-banner">
     <div class="container">
-      <h1 class="header center green-text text-darken-4">{% block title %}{% endblock %}</h1>
+      <h1 class="header center white-text text-darken-4">{% block title %}{% endblock %}</h1>
       <div class="row center">
           {% block content %}{% endblock %}
       </div>
@@ -50,43 +46,37 @@
     </div>
   </div>
 
-
-    <br><br>
-
-    <div class="section">
-
-    </div>
-  </div>
-
   <footer class="page-footer brown darken-1">
     <div class="container">
       <div class="row">
-        <div class="col l6 s12">
-          <h5 class="white-text">About us</h5>
+        <div class="col l4 s12">
+          <h5 class="white-text">Sophie's story</h5>
           <p class="green-text text-lighten-4">
-          Team of one Data Scientist. Exploring new technologies and designing comfortable solutions.
-          Currently taking the amazing module of Cloud Computing at QMUL.
+            She was born in 2014 in the family of Raul and Tammy Guerra in England, UK.
           </p>
+        </div>
+
+        
+        <div class="col l4 s12">
+          <h5 class="white-text">Sophie's Horse therapy</h5>
+          <p class="green-text text-lighten-4">
+            She likes riding horse. It makes her very happy and excited to move around.
+          </p>
+        </div>
 
 
+        <div class="col l4 s12">
+          <h5 class="white-text">Sophie's Physiotherapy</h5>
+          <p class="green-text text-lighten-4">
+            She goes regularly to sessions with physiotherapyst.
+          </p>
         </div>
-        <div class="col l3 s12">
-          <h5 class="white-text">Visit</h5>
-          <ul>
-            <li><a class="green-text text-lighten-4" href="http://iviglious.blogspot.co.uk/">Our homepage</a></li>
-          </ul>
-        </div>
-        <div class="col l3 s12">
-          <h5 class="white-text">Contact</h5>
-          <ul>
-            <li><a class="green-text text-lighten-4" href="mailto:i.s.shalev@se16.qmul.ac.uk">i.s.shalev@se16.qmul.ac.uk</a></li>
-          </ul>
-        </div>
+
       </div>
     </div>
     <div class="footer-copyright">
       <div class="container">
-      © Iviglious, 2017 - Made by <a class="green-text text-lighten-4" href="http://materializecss.com">Materialize</a>
+      Copyright © Iviglious, 2017 - Made with <a class="green-text text-lighten-4" href="http://materializecss.com">Materialize</a>
       </div>
     </div>
   </footer>
